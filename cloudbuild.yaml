@@ -6,8 +6,8 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
   # Deploy
-  - name: 'gcr.io/cloud-builders/firebase'
-    args: ['deploy']
+  - name: 'gcr.io/$PROJECT_ID/firebase'
+    args: ['deploy','--only=functions']
 images:
   - 'gcr.io/$PROJECT_ID/firebase'
 tags: [ 'cloud-builders-community' ]
